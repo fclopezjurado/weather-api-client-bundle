@@ -1,14 +1,14 @@
 parameters:
     weather_api_client.api_version: 'v1'
     weather_api_client.api_base_url: 'https://api.weatherapi.com'
-    weather_api_client.api_forecast_endpoint: '%weather_api_client.api_base_url%/%weather_api_client.api_version%/forecast.json?key=%weather_api_client.api_key%&q=%f,%f&days=2'
+    weather_api_client.api_forecast_endpoint: '%weather_api_client.api_base_url%/%weather_api_client.api_version%/forecast.json?key=%weather_api_client.api_key%&q=%%f,%%f&days=2'
 services:
     _defaults:
         autowire: true
         autoconfigure: true
 
     Tui\Weather\ApiClient\Infrastructure\Client\Http\HttpClient:
-        class: Tui\Musement\ApiClient\Infrastructure\Client\Http\HttpClient
+        class: Tui\Weather\ApiClient\Infrastructure\Client\Http\HttpClient
         arguments:
             $endpoint: '%weather_api_client.api_forecast_endpoint%'
 
