@@ -67,7 +67,7 @@ class ResponseVisitor implements ResponseVisitorInterface
 
         $denormalizedData = [
             'location' => $denormalizer->accept($this->locationVisitor, $normalizedData['location']),
-            'current' => $denormalizer->accept($this->currentVisitor, $normalizedData['location']),
+            'current' => $denormalizer->accept($this->currentVisitor, $normalizedData['current']),
             'forecast' => $denormalizer->accept($this->forecastVisitor, $normalizedData['forecast']),
         ];
 
