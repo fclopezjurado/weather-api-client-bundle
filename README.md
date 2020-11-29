@@ -1,6 +1,6 @@
-# TUI Musement API client bundle
+# TUI Weather API client bundle
 
-HTTP Client bundle that connects to TUI Musement API.
+HTTP Client bundle that connects to [Weather API](http://api.weatherapi.com/).
 
 ## Installation
 

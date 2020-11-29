@@ -17,11 +17,11 @@ composer check-platform-reqs
 1. Include this repository to the file `composer.json` of the root project:
    ```
    "require": {
-           "fclopezjurado/musement-api-client-bundle": "0.1.*",
+           "fclopezjurado/weather-api-client-bundle": "0.1.*",
    }
    ```
    
 2. Use *Composer* to add this bundle to the project dependencies:
    ```
-    composer req fclopezjurado/musement-api-client-bundle
+    composer req fclopezjurado/weather-api-client-bundle
    ```
