@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tui\Weather\ApiClient\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
@@ -13,7 +15,7 @@ class Configuration implements ConfigurationInterface
 
         $treeBuilder->getRootNode()
             ->children()
-                ->scalarNode('api_key')->end()
+            ->scalarNode('api_key')->end()
             ->end()
         ;
 

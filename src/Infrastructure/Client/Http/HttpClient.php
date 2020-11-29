@@ -19,6 +19,11 @@ class HttpClient extends AbstractHttpClient
     /**
      * @var string
      */
+    protected $weatherApiKey;
+
+    /**
+     * @var string
+     */
     protected $endpoint;
 
     /**
@@ -45,11 +50,13 @@ class HttpClient extends AbstractHttpClient
      * @param string                   $endpoint
      */
     public function __construct(
+        string $weatherApiKey,
         DeserializerInterface $deserializer,
         DenormalizerInterface $denormalizer,
         ResponseVisitorInterface $responseVisitor,
         string $endpoint
     ) {
+        $this->weatherApiKey = $weatherApiKey;
         $this->deserializer = $deserializer;
         $this->denormalizer = $denormalizer;
         $this->responseVisitor = $responseVisitor;
@@ -67,7 +74,7 @@ class HttpClient extends AbstractHttpClient
      */
     public function getForecast(float $latitude, float $longitude): AbstractEntity
     {
-        $uri = sprintf($this->endpoint, $latitude, $longitude);
+        $uri = sprintf($this->endpoint, $this->weatherApiKey, $latitude, $longitude);
         /** @var array[] $responseData */
         $responseData = $this->sendRequest(Request::METHOD_GET, $uri);
 
