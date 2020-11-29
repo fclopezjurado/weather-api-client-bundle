@@ -27,6 +27,8 @@ class WeatherApiClientExtension extends Extension implements PrependExtensionInt
      */
     public function load(array $configs, ContainerBuilder $container): void
     {
-        // TODO: Implement load() method.
+        $configuration = new Configuration();
+
+        $this->processConfiguration($configuration, $configs);
     }
 }

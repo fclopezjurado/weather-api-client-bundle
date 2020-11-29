@@ -1,7 +1,6 @@
 parameters:
     weather_api_client.api_version: 'v1'
     weather_api_client.api_base_url: 'https://api.weatherapi.com'
-    weather_api_client.api_key: '%env(string:API_KEY)%'
     weather_api_client.api_forecast_endpoint: '%weather_api_client.api_base_url%/%weather_api_client.api_version%/forecast.json?key=%weather_api_client.api_key%&q=%f,%f&days=2'
 services:
     _defaults:
