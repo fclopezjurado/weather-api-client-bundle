@@ -30,8 +30,8 @@ class Condition extends AbstractEntity
         $this->code = $code;
     }
 
-    public function __get(string $name): mixed
+    public function text(): string
     {
-        return $this->{$name};
+        return $this->text;
     }
 }

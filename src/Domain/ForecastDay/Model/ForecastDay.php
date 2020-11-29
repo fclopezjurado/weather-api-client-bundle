@@ -36,8 +36,8 @@ class ForecastDay extends AbstractEntity
         }
     }
 
-    public function __get(string $name): mixed
+    public function day(): Day
     {
-        return $this->{$name};
+        return $this->day;
     }
 }

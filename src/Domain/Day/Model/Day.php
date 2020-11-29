@@ -119,8 +119,8 @@ class Day extends AbstractEntity
         }
     }
 
-    public function __get(string $name): mixed
+    public function condition(): Condition
     {
-        return $this->{$name};
+        return $this->condition;
     }
 }

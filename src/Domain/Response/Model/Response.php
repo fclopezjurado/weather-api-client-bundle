@@ -33,8 +33,8 @@ class Response extends AbstractEntity
         $this->forecast = $forecast;
     }
 
-    public function __get(string $name): mixed
+    public function forecast(): Forecast
     {
-        return $this->{$name};
+        return $this->forecast;
     }
 }

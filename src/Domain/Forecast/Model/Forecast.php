@@ -25,7 +25,7 @@ class Forecast extends AbstractEntity
     /**
      * @return ForecastDay[]
      */
-    public function getForecastday(): array
+    public function forecastday(): array
     {
         return $this->forecastday;
     }
