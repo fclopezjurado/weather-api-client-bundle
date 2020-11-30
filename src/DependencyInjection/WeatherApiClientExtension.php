@@ -13,7 +13,7 @@ use Tui\Weather\ApiClient\Infrastructure\Client\Http\HttpClient;
 class WeatherApiClientExtension extends Extension
 {
     /**
-     * @param array            $configs
+     * @param array[]          $configs
      * @param ContainerBuilder $container
      *
      * @throws \Exception

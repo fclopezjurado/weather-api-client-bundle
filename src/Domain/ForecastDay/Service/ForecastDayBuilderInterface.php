@@ -10,7 +10,7 @@ use Tui\Weather\ApiClient\Domain\ForecastDay\Model\ForecastDay;
 interface ForecastDayBuilderInterface
 {
     /**
-     * @param array<string, int|string|Day> $data
+     * @param array<string, array|float|int|string|Day|null> $data
      *
      * @return $this|ForecastDayBuilderInterface
      */
@@ -19,7 +19,7 @@ interface ForecastDayBuilderInterface
     public function build(): ForecastDay;
 
     /**
-     * @return array<string, int|string|Day>
+     * @return array<string, array|float|int|string|Day|null>
      */
     public function toArray(): array;
 }

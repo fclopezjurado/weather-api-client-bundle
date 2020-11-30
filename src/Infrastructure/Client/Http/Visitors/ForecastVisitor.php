@@ -50,11 +50,13 @@ class ForecastVisitor implements ForecastVisitorInterface
         $keysToValidate = array_keys($normalizedData);
 
         $this->validator->arrayKeysExist($this->normalizer, $keysToValidate, $validKeys);
+        /** @var array[] $forecasts */
+        $forecasts = $normalizedData['forecastday'];
 
         $denormalizedData = [
             'forecastday' => array_map(function ($cityData) use ($denormalizer) {
                 return $denormalizer->accept($this->forecastDayVisitor, $cityData);
-            }, $normalizedData['forecastday']),
+            }, $forecasts),
         ];
 
         return $this->forecastBuilder

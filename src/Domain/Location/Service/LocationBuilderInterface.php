@@ -9,7 +9,7 @@ use Tui\Weather\ApiClient\Domain\Location\Model\Location;
 interface LocationBuilderInterface
 {
     /**
-     * @param array<string, int|string|float> $data
+     * @param array<string, array|float|int|string|null> $data
      *
      * @return $this|LocationBuilderInterface
      */
@@ -18,7 +18,7 @@ interface LocationBuilderInterface
     public function build(): Location;
 
     /**
-     * @return array<string, int|string|float>
+     * @return array<string, array|float|int|string|null>
      */
     public function toArray(): array;
 }

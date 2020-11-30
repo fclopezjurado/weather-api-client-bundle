@@ -51,9 +51,11 @@ class ForecastDayVisitor implements ForecastDayVisitorInterface
         $keysToValidate = array_keys($normalizedData);
 
         $this->validator->arrayKeysExist($this->normalizer, $keysToValidate, $validKeys);
+        /** @var array<string, array|float|int|string|null> $dayData */
+        $dayData = $normalizedData['day'];
 
         /** @var Day $day */
-        $day = $denormalizer->accept($this->dayVisitor, $normalizedData['day']);
+        $day = $denormalizer->accept($this->dayVisitor, $dayData);
         $denormalizedData = $this->normalizer->denormalize($normalizedData);
         $denormalizedData['day'] = $day;
 

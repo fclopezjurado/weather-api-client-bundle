@@ -10,7 +10,7 @@ use Tui\Weather\ApiClient\Domain\Current\Model\Current;
 interface CurrentBuilderInterface
 {
     /**
-     * @param array<string, int|string|float|Condition> $data
+     * @param array<string, int|string|array|float|Condition|null> $data
      *
      * @return $this|CurrentBuilderInterface
      */
@@ -19,7 +19,7 @@ interface CurrentBuilderInterface
     public function build(): Current;
 
     /**
-     * @return array<string, int|string|float|Condition>
+     * @return array<string, int|string|array|float|Condition|null>
      */
     public function toArray(): array;
 }

@@ -65,10 +65,17 @@ class ResponseVisitor implements ResponseVisitorInterface
 
         $this->validator->arrayKeysExist($this->normalizer, $keysToValidate, $validKeys);
 
+        /** @var array<string, array|float|int|string|null> $locationData */
+        $locationData = $normalizedData['location'];
+        /** @var array<string, array|float|int|string|null> $currentData */
+        $currentData = $normalizedData['current'];
+        /** @var array<string, array|float|int|string|null> $forecastData */
+        $forecastData = $normalizedData['forecast'];
+
         $denormalizedData = [
-            'location' => $denormalizer->accept($this->locationVisitor, $normalizedData['location']),
-            'current' => $denormalizer->accept($this->currentVisitor, $normalizedData['current']),
-            'forecast' => $denormalizer->accept($this->forecastVisitor, $normalizedData['forecast']),
+            'location' => $denormalizer->accept($this->locationVisitor, $locationData),
+            'current' => $denormalizer->accept($this->currentVisitor, $currentData),
+            'forecast' => $denormalizer->accept($this->forecastVisitor, $forecastData),
         ];
 
         return $this->responseBuilder

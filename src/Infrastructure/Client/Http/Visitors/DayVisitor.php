@@ -51,9 +51,11 @@ class DayVisitor implements DayVisitorInterface
         $keysToValidate = array_keys($normalizedData);
 
         $this->validator->arrayKeysExist($this->normalizer, $keysToValidate, $validKeys);
+        /** @var array<string, array|float|int|string|null> $conditionData */
+        $conditionData = $normalizedData['condition'];
 
         /** @var Condition $condition */
-        $condition = $denormalizer->accept($this->conditionVisitor, $normalizedData['condition']);
+        $condition = $denormalizer->accept($this->conditionVisitor, $conditionData);
         $denormalizedData = $this->normalizer->denormalize($normalizedData);
         $denormalizedData['condition'] = $condition;
 
