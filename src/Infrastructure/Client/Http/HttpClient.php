@@ -44,6 +44,7 @@ class HttpClient extends AbstractHttpClient
     /**
      * HttpClient constructor.
      *
+     * @param string                   $weatherApiKey
      * @param DeserializerInterface    $deserializer
      * @param DenormalizerInterface    $denormalizer
      * @param ResponseVisitorInterface $responseVisitor
